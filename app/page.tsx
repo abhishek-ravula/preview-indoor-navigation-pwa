@@ -603,16 +603,9 @@ export default function IndoorNavigation() {
                       stroke="white"
                       strokeWidth="3"
                       rx="8"
-                      className={`
-                  cursor-pointer
-                  transition-transform duration-300 ease-out
-                  drop-shadow-lg
-                  ${
-                    selectedPOI?.id === poi.id
-                      ? "scale-[1.25] animate-pulse"
-                      : "hover:scale-110"
-                  }
-                `}
+                      className={`cursor-pointer transition-transform duration-300 ease-out drop-shadow-lg ${
+                        selectedPOI?.id === poi.id ? "animate-pulse" : ""
+                      }`}
                       onClick={() => handlePOIClick(poi)}
                       style={{ transformOrigin: "center" }}
                     />
