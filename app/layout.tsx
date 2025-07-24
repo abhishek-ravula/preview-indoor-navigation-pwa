@@ -1,5 +1,5 @@
 import type React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -10,21 +10,29 @@ export const metadata: Metadata = {
   description:
     "Navigate indoor spaces with ease using QR code scanning and offline maps",
   manifest: "/manifest.json",
-  themeColor: "#3b82f6",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
     title: "IndoorNav",
   },
-  // viewport:
-  //   "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
-  viewport:
-    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover",
   icons: [
     { rel: "apple-touch-icon", url: "icons/icon-128x128.png" },
     { rel: "icon", url: "icons/icon-128x128.png" },
   ],
 };
+
+// ✅ Move viewport to a dedicated export
+export const viewport: Viewport = {
+  minimumScale: 1,
+  initialScale: 1,
+  width: "device-width",
+  userScalable: false,
+  viewportFit: "cover",
+  themeColor: "#3b82f6",
+};
+
+// ✅ Move themeColor to a dedicated export
+// export const themeColor = "#3b82f6";
 
 export default function RootLayout({
   children,
@@ -33,7 +41,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      {/* <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <meta name="theme-color" content="#3b82f6" />
+      </head> */}
+      {/* <body className={inter.className}>{children}</body> */}
+      <body className={inter.className}>
+        <h1>Hello from PWA!</h1>;
+      </body>
     </html>
   );
 }

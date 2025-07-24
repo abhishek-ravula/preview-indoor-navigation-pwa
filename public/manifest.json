@@ -1,7 +1,8 @@
 {
   "name": "Indoor Navigation PWA",
   "short_name": "Indoor navigation",
-  "theme_color": "#35155D",
+  "theme_color": "#3b82f6",
+  "description": "Navigate indoor spaces with ease using QR code scanning and offline maps",
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
