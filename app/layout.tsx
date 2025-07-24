@@ -46,10 +46,10 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <meta name="theme-color" content="#3b82f6" />
       </head> */}
-      {/* <body className={inter.className}>{children}</body> */}
-      <body className={inter.className}>
+      <body className={inter.className}>{children}</body>
+      {/* <body className={inter.className}>
         <h1>Hello from PWA!</h1>;
-      </body>
+      </body> */}
     </html>
   );
 }
